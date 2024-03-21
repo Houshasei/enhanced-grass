@@ -17,13 +17,9 @@ read -p "User ID/s: " user_ids_var
 sed -i "s/USER_IDS=/USER_IDS=$user_ids_var/g" $LOCAL_DIR/.env
 sed -i "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
 
-# Install git
-echo Installing git that will be used for automatic updates
-sudo apt-get update
-sudo apt-get install git-all
-
 # Installing node and npm
 echo Installing NodeJS and NPM which are used for running the actual app
+curl -sL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash -
 sudo apt update
 sudo apt install nodejs
 sudo apt install npm
