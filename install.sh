@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
+sudo curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
 
 # Function to check if running as root
 check_root() {
