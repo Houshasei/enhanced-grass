@@ -43,7 +43,7 @@ install_git() {
 install_or_update_nodejs() {
     if ! command -v node &> /dev/null; then
         echo "[❗] Node.js is not installed. Installing..."
-        curl -fsSL https://raw.githubusercontent.com/Houshasei/better-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
+        curl -fsSL https://github.com/Houshasei/enhanced-grass/raw/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
         sudo apt-get install -y nodejs npm >/dev/null 2>&1
     else
         echo "[✅] Node.js is already installed."
@@ -97,7 +97,7 @@ install_or_update_better_grass() {
 
     # Clone the GitHub repository
     echo "[✅] Cloning the GitHub repository..."
-    git clone https://github.com/Houshasei/better-grass.git /usr/bin/better-grass || {
+    git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/better-grass || {
         echo "[❌] Failed to clone the repository."
         exit 1
     }
