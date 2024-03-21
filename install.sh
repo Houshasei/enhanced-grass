@@ -43,7 +43,7 @@ install_git() {
 install_or_update_nodejs() {
     if ! command -v node &> /dev/null; then
         echo "[❗] Node.js is not installed. Installing..."
-        curl -fsSL https://github.com/Houshasei/enhanced-grass/raw/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
+        curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/install.sh | sudo -E bash - >/dev/null 2>&1
         sudo apt-get install -y nodejs npm >/dev/null 2>&1
     else
         echo "[✅] Node.js is already installed."
