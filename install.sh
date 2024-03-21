@@ -43,7 +43,7 @@ install_git() {
 install_or_update_nodejs() {
     if ! command -v node &> /dev/null; then
         echo "[❗] Node.js is not installed. Installing..."
-        curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/install.sh | sudo -E bash - >/dev/null 2>&1
+        curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
         sudo apt-get install -y nodejs npm >/dev/null 2>&1
     else
         echo "[✅] Node.js is already installed."
@@ -66,7 +66,7 @@ install_or_update_nodejs() {
 }
 
 # Function to install or update enhanced-grass
-install_or_update_better_grass() {
+install_or_update_enhanced_grass() {
     if [ -d "/usr/bin/enhanced-grass" ]; then
         echo "[❗] The enhanced-grass is already installed."
         read -p "[❓] Do you want to reinstall/update? (yes/no): " choice
@@ -135,4 +135,4 @@ check_root
 update_packages
 install_git
 install_or_update_nodejs
-install_or_update_better_grass
+install_or_update_enhanced_grass
