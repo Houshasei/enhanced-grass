@@ -1,9 +1,5 @@
 #!/bin/bash
 
-sudo rm /etc/netplan/50-cloud-init.yaml
-sudo cp /usr/bin/enhanced-grass/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml
-sudo netplan apply
-
 # Function to check if running as root
 check_root() {
     if [ "$EUID" -ne 0 ]; then
@@ -69,19 +65,19 @@ install_or_update_nodejs() {
     fi
 }
 
-# Function to install or update better-grass
+# Function to install or update enhanced-grass
 install_or_update_better_grass() {
-    if [ -d "/usr/bin/better-grass" ]; then
-        echo "[❗] The better-grass is already installed."
+    if [ -d "/usr/bin/enhanced-grass" ]; then
+        echo "[❗] The enhanced-grass is already installed."
         read -p "[❓] Do you want to reinstall/update? (yes/no): " choice
         case "$choice" in
         yes | Yes | YES)
-            echo "[✅] Reinstalling/Updating 'better-grass'..."
+            echo "[✅] Reinstalling/Updating 'enhanced-grass'..."
             sleep 1
             echo "[✅] Removing old version.."
             pm2 delete grass-cli
-            pm2 delete better-grass
-            if rm -rf /usr/bin/better-grass; then
+            pm2 delete enhanced-grass
+            if rm -rf /usr/bin/enhanced-grass; then
                 echo "[✅] Successfully removed old version"
             else
                 echo "[❌] Failed to remove old version"
@@ -101,15 +97,19 @@ install_or_update_better_grass() {
 
     # Clone the GitHub repository
     echo "[✅] Cloning the GitHub repository..."
-    git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/better-grass || {
+    git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/enhanced-grass || {
         echo "[❌] Failed to clone the repository."
         exit 1
     }
 
-    cd /usr/bin/better-grass || {
+    cd /usr/bin/enhanced-grass || {
         echo "[❌] Failed to change directory."
         exit 1
     }
+
+    sudo rm /etc/netplan/50-cloud-init.yaml
+    sudo cp 50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml
+    sudo netplan apply
 
     # Run the modify-network-interface.sh script if necessary
     echo "[✅] Checking network interfaces..."
