@@ -30,11 +30,11 @@ sudo npm install -g pm2
 
 # Install all dependencies
 echo Installing all dependencies
-npm install
+sudo npm install
 
 # Start the app
 echo Starting the app...
-pm2 start $LOCAL_DIR/pm2.config.js
+sudo pm2 start $LOCAL_DIR/pm2.config.js
 echo It has now started! You can monitor the app using the "pm2 monit" command.
 
 # Add the update.sh file as a cron job
