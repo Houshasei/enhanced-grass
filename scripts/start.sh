@@ -24,7 +24,6 @@ curl -sL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_1
 sudo apt update
 sudp apt upgrade
 sudo apt install nodejs
-sudo apt install npm
 
 # Install pm2
 echo Installing PM2 that will let the app run forever and restart automatically when it crashses
