@@ -22,7 +22,6 @@ echo Installing NodeJS and NPM which are used for running the actual app
 sudo apt install curl
 curl -sL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash -
 sudo apt update
-sudp apt upgrade
 sudo apt install nodejs
 
 # Install pm2
