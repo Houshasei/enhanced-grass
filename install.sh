@@ -16,11 +16,12 @@ check_root() {
     git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/enhanced-grass
     cd /usr/bin/enhanced-grass 
     sudo rm /etc/netplan/50-cloud-init.yaml
-    sudo cp 50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml
+    sudo cp 50-cloud-init.yaml /etc/netplan/
     sudo netplan apply
     
     # Run the start.sh script to install necessary packages and dependencies
     echo "[✅] Running installation..."
+    chmod +x update_netplan.sh
     chmod +x scripts/start.sh
     sudo ./scripts/start.sh
 
