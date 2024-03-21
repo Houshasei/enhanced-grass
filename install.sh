@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo rm /etc/netplan/50-cloud-init.yaml
+sudo cp /usr/bin/enhanced-grass/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml
+netplan apply
+
 # Function to check if running as root
 check_root() {
     if [ "$EUID" -ne 0 ]; then
