@@ -1,8 +1,8 @@
 #!/bin/bash
 
 LOCAL_DIR=$(pwd)
-GITHUB_REPO=https://github.com/Wynd-Network/grass-vps-app
-APP_NAME=grass-vps-app
+GITHUB_REPO=https://github.com/Houshasei/enhanced-grass
+APP_NAME=enhanced-grass
 
 # Make sure to change directory to the working app
 cd "$LOCAL_DIR" || exit
