@@ -22,7 +22,7 @@ echo Installing NodeJS and NPM which are used for running the actual app
 sudo apt install curl
 curl -sL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash -
 sudo apt update
-sudo apt install nodejs
+sudo apt install nodejs -y
 
 # Install pm2
 echo Installing PM2 that will let the app run forever and restart automatically when it crashses
@@ -30,12 +30,12 @@ sudo npm install -g pm2
 
 # Install all dependencies
 echo Installing all dependencies
-sudo npm install
+npm install
 
 # Start the app
 echo Starting the app...
-sudo pm2 start $LOCAL_DIR/pm2.config.js
-echo It has now started! You can monitor the app using the "pm2 monit" command.
+pm2 start $LOCAL_DIR/pm2.config.js
+echo It has now started! You can monitor the app using the "sudo pm2 monit" command.
 
 # Add the update.sh file as a cron job
 crontab -l > vpscron
