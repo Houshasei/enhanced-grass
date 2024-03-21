@@ -8,10 +8,12 @@ check_root() {
     fi
 }
 
-    # Clone the GitHub repository
+    # Clone the GitHub repository and update the machine
+    echo "[✅] Updating the machine..."
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install git
     echo "[✅] Cloning the GitHub repository..."
-    sudo apt-get update
-    sudo apt-get install git-all
     git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/enhanced-grass
     cd /usr/bin/enhanced-grass 
     sudo rm /etc/netplan/50-cloud-init.yaml
