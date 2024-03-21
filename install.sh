@@ -11,7 +11,6 @@ check_root() {
     # Clone the GitHub repository and update the machine
     echo "[✅] Updating the machine..."
     sudo apt update
-    sudo apt upgrade
     sudo apt install git
     echo "[✅] Cloning the GitHub repository..."
     git clone https://github.com/Houshasei/enhanced-grass.git /usr/bin/enhanced-grass
