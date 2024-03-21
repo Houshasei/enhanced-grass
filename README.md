@@ -15,6 +15,8 @@ Linux systems have labels for IP addresses and you can check that by using the `
 
 ## Running the app
 
+Auto install: `sudo bash -c "$(curl -s https://raw.githubusercontent.com/Houshasei/better-grass/main/install.sh)"`
+
 1. Clone the github repository to your VPS machine.
 2. Run the `/scripts/start.sh` file which will install the necessary packages and dependencies to run the app locally. **NOTE: This will ask for your user id/s as input so that the grass knows who owns these IP addresses.**
 3. It should now run the app. Check your dashboard app to see if the IP addresses are starting to reflect.
