@@ -21,10 +21,6 @@ check_root() {
     
     # Run the start.sh script to install necessary packages and dependencies
     echo "[✅] Running installation..."
-    chmod +x update_netplan.sh
-    sudo cp update_netplan.service /etc/systemd/system/
-    sudo systemctl daemon-reload
-    sudo systemctl enable update_netplan.service
     chmod +x scripts/start.sh
     sudo ./scripts/start.sh
 
