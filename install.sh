@@ -9,6 +9,7 @@ check_root() {
 }
 
     # Clone the GitHub repository and update the machine
+    clear
     echo "[✅] Updating the machine..."
     sudo apt update
     sudo apt install git -y
