@@ -10,6 +10,7 @@ check_root() {
 
 # Kill the PM2 process and daemon
 sudo pm2 kill
+sudo pm2 unstartup
 
 # Define the old and new text values with quotes
 old_text='"d0b011d3-51a7-4106-8352-94ec9b341c57"'
@@ -26,6 +27,8 @@ echo "Replacement complete."
 echo "Starting Grass..."
 cd /usr/bin/enhanced-grass
 sudo pm2 start pm2.config.js
+sudo pm2 startup
+sudo pm2 save
     
     
     
