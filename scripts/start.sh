@@ -19,7 +19,7 @@ sed -i "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
 
 # Installing node and npm
 echo Installing NodeJS and NPM which are used for running the actual app
-sudo apt install curl
+sudo apt install curl -y
 curl -sL https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/setup_19.x | sudo -E bash -
 sudo apt update
 sudo apt install nodejs -y
