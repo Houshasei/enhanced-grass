@@ -129,7 +129,7 @@ const initialize = (ipAddress, userId) => {
 
   const authenticate = (params) => {
     const browser_id = uuidv5(ipAddress, NAMESPACE);
-    const deviceType = `vps, ${os.platform}, ${os.release()}`;
+    const deviceType = `extension, ${os.platform}, ${os.release()}`;
 
     const authenticationResponse = {
       browser_id,
