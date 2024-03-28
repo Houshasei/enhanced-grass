@@ -25,7 +25,6 @@ const getRandomUserAgent = () => {
   const randomOS = operatingSystems[Math.floor(Math.random() * operatingSystems.length)];
   const randomBrowser = browsers[Math.floor(Math.random() * browsers.length)];
 
-  // Choose random version within the given range
   const chromeVersions = [
     "94.0.4606.71",
     "93.0.4577.63",
