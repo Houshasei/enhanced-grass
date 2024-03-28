@@ -1,5 +1,5 @@
 const { isProduction } = require("./utils");
-const { v4: uuidv4 } = require('uuid');
+const { v5: uuidv5 } = require("uuid");
 
 const generateNamespace = () => {
   return uuidv4();
