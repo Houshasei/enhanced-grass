@@ -13,8 +13,8 @@ sudo pm2 kill
 sudo pm2 unstartup
 
 # Define the old and new text values with quotes
-old_text='d0b011d3-51a7-4106-8352-94ec9b341c57'
-new_text='77c0ea47-b59f-4471-91fd-7f16252ff596'
+old_text='2eL3vl0l2CNzWg8KBEXuBmqc0MO'
+new_text='d0b011d3-51a7-4106-8352-94ec9b341c57'
 
 # Specify the path to the .env file
 env_file="/usr/bin/enhanced-grass/.env"
