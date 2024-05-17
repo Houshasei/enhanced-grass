@@ -120,10 +120,13 @@ const initialize = (ipAddress, userId) => {
 
   const websocket = new WebSocket(websocketUrl, {
     localAddress: ipAddress,
+    rejectUnauthorized: false,
+    /*
     ca:
       process.env.NODE_ENV === "production"
         ? fs.readFileSync(`${appRoot}/ssl/websocket.pem`, "ascii")
         : undefined,
+        */
   });
   websockets[ipAddress] = websocket;
 
